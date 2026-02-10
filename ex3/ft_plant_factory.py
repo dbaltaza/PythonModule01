@@ -1,28 +1,21 @@
 """
 Exercise 3: Plant Factory
-Demonstrates creating multiple objects and tracking collection size.
+Creating multiple objects and counting them.
 """
 
 
 class Plant:
-    """A simple Plant class representing a garden plant."""
+    """A simple plant."""
 
     def __init__(self, name: str, height: int, age: int) -> None:
-        """
-        Initialize a Plant instance.
-
-        Args:
-            name: The name of the plant.
-            height: The height of the plant in centimeters.
-            age: The age of the plant in days.
-        """
+        """Create a plant with name, height (cm) and age (days)."""
         self.name = name
         self.height = height
         self.age = age
 
 
 def ft_plant_factory() -> None:
-    """Create multiple plants and display factory output."""
+    """Create several plants and show them."""
     plants = (
         Plant("Rose", 25, 30),
         Plant("Oak", 200, 365),

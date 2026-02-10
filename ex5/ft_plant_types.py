@@ -1,112 +1,80 @@
 """
 Exercise 5: Plant Types
-Demonstrates inheritance with specialized plant classes.
+Inheritance with specialized plant classes.
 """
 
 
 class Plant:
-    """Base class representing a generic plant."""
+    """A basic plant."""
 
     def __init__(self, name: str, height: int, age: int) -> None:
-        """
-        Initialize a Plant instance.
-
-        Args:
-            name: The name of the plant.
-            height: The height of the plant in centimeters.
-            age: The age of the plant in days.
-        """
+        """Create a plant with name, height (cm) and age (days)."""
         self.name = name
         self.height = height
         self.age = age
 
 
 class Flower(Plant):
-    """A flowering plant with color attribute."""
+    """A flower with a color."""
 
     def __init__(self, name: str, height: int, age: int, color: str) -> None:
-        """
-        Initialize a Flower instance.
-
-        Args:
-            name: The name of the flower.
-            height: The height in centimeters.
-            age: The age in days.
-            color: The color of the flower.
-        """
+        """Create a flower with a color."""
         super().__init__(name, height, age)
         self.color = color
 
     def bloom(self) -> str:
-        """Return a message indicating the flower is blooming."""
+        """Return a blooming message."""
         return f"{self.name} is blooming beautifully!"
 
     def __str__(self) -> str:
-        """Return string representation of the flower."""
+        """Return flower as a string."""
         return (f"{self.name} (Flower): {self.height}cm, "
                 f"{self.age} days, {self.color} color")
 
 
 class Tree(Plant):
-    """A tree with trunk diameter attribute."""
+    """A tree with trunk diameter."""
 
     def __init__(self, name: str, height: int, age: int,
                  trunk_diameter: float) -> None:
-        """
-        Initialize a Tree instance.
-
-        Args:
-            name: The name of the tree.
-            height: The height in centimeters.
-            age: The age in days.
-            trunk_diameter: The diameter of the trunk in centimeters.
-        """
+        """Create a tree with trunk diameter (cm)."""
         super().__init__(name, height, age)
         self.trunk_diameter = trunk_diameter
 
     def produce_shade(self) -> str:
-        """Calculate and return the shade area provided by the tree."""
+        """Calculate shade area from trunk size."""
         import math
         area = math.pi * (self.trunk_diameter / 2) ** 2 / 100
         return f"{self.name} provides {int(area)} square meters of shade"
 
     def __str__(self) -> str:
-        """Return string representation of the tree."""
+        """Return tree as a string."""
         return (f"{self.name} (Tree): {self.height}cm, "
                 f"{self.age} days, {int(self.trunk_diameter)}cm diameter")
 
 
 class Vegetable(Plant):
-    """A vegetable plant with harvest and nutritional information."""
+    """A vegetable with harvest info."""
 
     def __init__(self, name: str, height: int, age: int,
                  harvest_season: str, nutritional_value: str) -> None:
-        """
-        Initialize a Vegetable instance.
-
-        Args:
-            name: The name of the vegetable.
-            height: The height in centimeters.
-            age: The age in days.
-            harvest_season: The season for harvesting.
-            nutritional_value: Description of nutritional benefits.
-        """
+        """Create a vegetable with harvest season and nutritional value."""
         super().__init__(name, height, age)
         self.harvest_season = harvest_season
         self.nutritional_value = nutritional_value
 
     def nutrition(self) -> str:
-        """Return nutritional information about the vegetable."""
+        """Return nutrition info."""
         return f"{self.name} is {self.nutritional_value.lower()}"
 
     def __str__(self) -> str:
-        """Return string representation of the vegetable."""
+        """Return vegetable as a string."""
         return (f"{self.name} (Vegetable): {self.height}cm, "
                 f"{self.age} days, {self.harvest_season} harvest")
 
 
 def ft_plant_types() -> None:
-    """Demonstrate different specialized plant types."""
+    """Show different plant types."""
     print("=== Garden Plant Types ===\n")
 
     rose = Flower("Rose", 25, 30, "red")
