@@ -83,8 +83,7 @@ class Garden:
         print("Plants in garden:")
         for plant in self.plants:
             print(f"- {plant}")
-        print(f"\nPlants added: {self.added_count}")
-        print(f"Total growth: {self.total_growth}cm")
+        print(f"\nPlants added: {self.added_count} Total growth: {self.total_growth}cm")
 
         # Count different plant types
         regular_count = 0
@@ -100,7 +99,7 @@ class Garden:
                 regular_count += 1
 
         print(f"Plant types: {regular_count} regular, "
-              f"{flowering_count} flowering, {prize_count} prize flowers")
+              f"{flowering_count} flowering, {prize_count} prize flowers\n")
         print(f"All plants healthy: {self.validate_heights()}")
 
     def validate_heights(self) -> bool:

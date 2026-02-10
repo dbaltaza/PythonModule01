@@ -22,7 +22,7 @@ def ft_garden_intro() -> None:
     print("Name:", plant.name)
     print("Height:", f"{plant.height}cm")
     print("Age:", plant.age, "days")
-    print("=== End of Program ===")
+    print("\n=== End of Program ===")
 
 
 if __name__ == "__main__":
