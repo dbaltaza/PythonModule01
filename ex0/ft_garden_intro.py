@@ -4,25 +4,18 @@ Basic class and object creation.
 """
 
 
-class Plant:
-    """A simple plant."""
-
-    def __init__(self, name: str, height: int, age: int) -> None:
-        """Create a plant with name, height (cm) and age (days)."""
-        self.name = name
-        self.height = height
-        self.age = age
-
-
 def ft_garden_intro() -> None:
-    """Show basic plant info."""
-    plant = Plant("Rose", 25, 30)
+    """Show basic plant info using simple variables."""
+    # Store plant information in simple variables
+    name = "Rose"
+    height = 25
+    age = 30
 
-    print("== Welcome to my Garden ==")
-    print("Name:", plant.name)
-    print("Height:", f"{plant.height}cm")
-    print("Age:", plant.age, "days")
-    print("\n=== End of Program ===")
+    print("=== Welcome to My Garden ===")
+    print(f"Plant: {name}")
+    print(f"Height: {height}cm")
+    print(f"Age: {age} days")
+    print("=== End of Program ===")
 
 
 if __name__ == "__main__":

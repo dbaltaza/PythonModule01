@@ -29,7 +29,7 @@ class Plant:
 def ft_plant_growth() -> None:
     """Show how plants grow over a week."""
     plants = [
-        Plant("Rose", 25, 30) ]
+        Plant("Rose", 25, 30)]
 
     print("=== Day 1 ===")
     for plant in plants:
@@ -43,7 +43,7 @@ def ft_plant_growth() -> None:
     print("=== Day 7 ===")
     for plant in plants:
         print(plant.get_info())
-    print(f"Growth this week: +6cm")
+    print("Growth this week: +6cm")
 
 
 if __name__ == "__main__":
