@@ -13,34 +13,37 @@ class Plant:
         self.height = height
         self.age = age
 
+    def grow_plant(self, amount: int) -> None:
+        """Update plant height."""
+        self.height += amount
 
-def grow(height: int, days: int) -> int:
-    """Calculate new height after growing for some days."""
-    return height + days
+    def age_plant(self, days: int) -> None:
+        """Update plant age."""
+        self.age += days
 
-
-def age(current_age: int, days: int) -> int:
-    """Calculate new age after some days pass."""
-    return current_age + days
+    def get_info(self) -> str:
+        """Return the current plant status."""
+        return f"{self.name}: {self.height}cm, {self.age} days old"
 
 
 def ft_plant_growth() -> None:
-    """Show how a plant grows over a week."""
-    plant = Plant("Rose", 25, 30)
-    days = 1
+    """Show how plants grow over a week."""
+    plants = [
+        Plant("Rose", 25, 30) ]
 
-    print(f"=== Day {days} ===")
-    print(f"{plant.name}:", f"{plant.height}cm,", f"{plant.age} days old")
+    print("=== Day 1 ===")
+    for plant in plants:
+        print(plant.get_info())
 
-    while days < 6:
-        days += 1
+    # Simulate a week (6 more days to reach Day 7)
+    for plant in plants:
+        plant.grow_plant(6)
+        plant.age_plant(6)
 
-    print(f"=== Day {days + 1} ===")
-    print(
-        f"{plant.name}: {grow(plant.height, days)}cm, "
-        f"{age(plant.age, days)} days old"
-    )
-    print(f"Growth this week: +{days}cm")
+    print("=== Day 7 ===")
+    for plant in plants:
+        print(plant.get_info())
+    print(f"Growth this week: +6cm")
 
 
 if __name__ == "__main__":
