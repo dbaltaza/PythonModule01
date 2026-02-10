@@ -129,6 +129,7 @@ class GardenManager:
     class GardenStats:
         """Helper class for garden stats."""
 
+        @staticmethod
         def total_plants(gardens: list) -> int:
             """Count all plants across gardens."""
             total = 0
@@ -136,6 +137,7 @@ class GardenManager:
                 total += len(garden.plants)
             return total
 
+        @staticmethod
         def average_garden_height(gardens: list) -> float:
             """Get average total height per garden."""
             if not gardens:
@@ -168,8 +170,10 @@ class GardenManager:
         """Create gardens for a list of owner names."""
         for name in names:
             self.add_garden(Garden(name))
+        return self
 
-    def utility_garden_tip(self) -> str:
+    @staticmethod
+    def utility_garden_tip() -> str:
         """Return a gardening tip."""
         return "Water your plants in the morning for best results."
 
