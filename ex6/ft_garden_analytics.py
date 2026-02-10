@@ -164,16 +164,12 @@ class GardenManager:
         """Add a garden."""
         self.gardens.append(garden)
 
-    @classmethod
-    def create_garden_network(cls, names: list) -> "GardenManager":
+    def create_garden_network(self, names: list) -> "GardenManager":
         """Create gardens for a list of owner names."""
-        manager = cls()
         for name in names:
-            manager.add_garden(Garden(name))
-        return manager
+            self.add_garden(Garden(name))
 
-    @staticmethod
-    def utility_garden_tip() -> str:
+    def utility_garden_tip(self) -> str:
         """Return a gardening tip."""
         return "Water your plants in the morning for best results."
 
@@ -196,7 +192,8 @@ def ft_garden_analytics() -> None:
     """Demo the garden system."""
     print("=== Garden Management System Demo ===\n")
 
-    manager = GardenManager.create_garden_network(["Alice", "Bob"])
+    manager = GardenManager()
+    manager.create_garden_network(["Alice", "Bob"])
     alice_garden = manager.gardens[0]
     bob_garden = manager.gardens[1]
 
